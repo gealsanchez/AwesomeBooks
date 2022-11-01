@@ -56,14 +56,15 @@ removeForm.setAttribute('class', 'bookForm');
 const br = document.createElement('br');
 const br1 = document.createElement('br');
 
-
+let deldata=[];
 
 function showBooks() {
   for (let i = 0; i < books.length; i += 1) {
-    let deldata = {
+    deldata = {
       bookName: books[i].Name,
       bookAuthor: books[i].Author,
     };
+
     const divName = document.createElement('div');
     divName.className = 'divName';
     divName.id = '#name';
