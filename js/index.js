@@ -1,5 +1,7 @@
 import books from '../data/books.js';
 
+const bookList = books.books;
+
 const createTag = (tagName, textContent = null, className = null) => {
   const tag = document.createElement(tagName);
   tag.textContent = textContent;
@@ -88,6 +90,6 @@ buttonAdd.addEventListener('click', () => {
 });
 
 // Display Books on page load
-if (books.length > 0) {
-  document.addEventListener('DOMContentLoaded', buildBookSection(books));
+if (bookList.length > 0) {
+  document.addEventListener('DOMContentLoaded', buildBookSection(bookList));
 }
