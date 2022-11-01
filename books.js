@@ -87,11 +87,12 @@ function showBooks() {
 
     booksArray.appendChild(divCard);
 
+    const deldata = {
+      bookName: books[i].Name,
+      bookAuthor: books[i].Author,
+    };
+
     function removeRow() {
-      const deldata = {
-        bookName: books[i].Name,
-        bookAuthor: books[i].Author,
-      };
 
       localStorage.setItem('deletedDATA', JSON.stringify(deldata));
 
