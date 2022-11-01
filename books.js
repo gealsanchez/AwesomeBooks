@@ -58,7 +58,6 @@ const br1 = document.createElement('br');
 
 function showBooks() {
   for (let i = 0; i < books.length; i += 1) {
-
     const divName = document.createElement('div');
     divName.className = 'divName';
     divName.id = '#name';
@@ -89,12 +88,12 @@ function showBooks() {
     booksArray.appendChild(divCard);
 
     function removeRow() {
-      const obj = {
+      const deldata = {
         bookName: books[i].Name,
         bookAuthor: books[i].Author,
       };
 
-      localStorage.setItem('deletedDATA', JSON.stringify(obj));
+      localStorage.setItem('deletedDATA', JSON.stringify(deldata));
 
       for (let j = 0; j < books.length; j += 1) {
         if (books[i].Name === books[j].Name) {
@@ -105,8 +104,7 @@ function showBooks() {
       booksArray.innerHTML = '';
       showBooks();
     }
-
-    buttonRemove.addEventListener('click', removeRow)
+    buttonRemove.addEventListener('click', removeRow);
   }
 }
 
@@ -123,7 +121,7 @@ maincontainer.appendChild(booksArray);
 maincontainer.appendChild(bookForm);
 
 function addRow() {
-  let c = { Name: bookName.value, Author: bookAuthor.value }
+  const c = { Name: bookName.value, Author: bookAuthor.value };
   books.unshift(c);
   booksArray.innerHTML = '';
   showBooks();
