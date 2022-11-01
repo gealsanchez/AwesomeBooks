@@ -67,7 +67,7 @@ const buildBookSection = (bookList) => {
 const addBook = (name, author) => {
   const books = JSON.parse(localStorage.getItem('books')) || [];
   const id = bookList.length + 1;
-  const book = { Name: name, Author: author, id: id };
+  const book = { Name: name, Author: author, id };
   books.push(book);
   localStorage.setItem('books', JSON.stringify(books));
 };
