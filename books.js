@@ -56,12 +56,12 @@ removeForm.setAttribute('class', 'bookForm');
 const br = document.createElement('br');
 const br1 = document.createElement('br');
 
-
+const deldata=[];
 
 function showBooks() {
   for (let i = 0; i < books.length; i += 1) {
 
-    const deldata = {
+    deldata = {
       bookName: books[i].Name,
       bookAuthor: books[i].Author,
     };
