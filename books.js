@@ -87,16 +87,6 @@ function showBooks() {
 
     booksArray.appendChild(divCard);
 
-    function removeRow() {
-      for (let j = 0; j < books.length; j += 1) {
-        if (books[i].Name === books[j].Name) {
-          books.splice(j, 1);
-        }
-      }
-
-      booksArray.innerHTML = '';
-      showBooks();
-    }
     buttonRemove.addEventListener('click', removeRow);
   }
 }
@@ -116,6 +106,16 @@ maincontainer.appendChild(bookForm);
 function addRow() {
   const c = { Name: bookName.value, Author: bookAuthor.value };
   books.unshift(c);
+  booksArray.innerHTML = '';
+  showBooks();
+}
+
+function removeRow() {
+  for (let j = 0; j < books.length; j += 1) {
+    if (books[i].Name === books[j].Name) {
+      books.splice(j, 1);
+    }
+  }
   booksArray.innerHTML = '';
   showBooks();
 }
