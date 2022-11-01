@@ -4,6 +4,7 @@
 ## Built With
 
 - Major languages :\
+**Javascript**
   **HTML5**  \
   **CSS3**
 
@@ -27,6 +28,8 @@ git clone https://github.com/gealsanchez/AwesomeBooks.git
 
 ```
 
+https://gealsanchez.github.io/AwesomeBooks/
+
 ### Usage
 
 After downloading source on your local machine, you can simply edit the HTML and CSS files from the folder. To preview the changes you make to the code, you can open the index.html file in your web browser.
@@ -36,16 +39,16 @@ After downloading source on your local machine, you can simply edit the HTML and
 ### Deployment
 Deploy on any web hosting server cloud/in site and enjoy 
 
-
+https://gealsanchez.github.io/AwesomeBooks/
 
 
 ## Authors
 
 👤 **Gerson SANCHEZ**
 
-- GitHub: [@gealsanchez](https://github.com/gealsanchez)
-- Twitter: [@gealsanchez](https://twitter.com/gealsanchez)
-- LinkedIn: [/gealsanchez/](www.linkedin.com/in/gealsanchez)
+- GitHub: [@githubhandle](https://github.com/gealsanchez)
+- Twitter: [@twitterhandle](https://twitter.com/gealsanchez)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/gerson-sanchez-88309b57/)
 
 
 ## 🤝 Contributing
