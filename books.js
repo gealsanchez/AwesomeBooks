@@ -56,15 +56,8 @@ removeForm.setAttribute('class', 'bookForm');
 const br = document.createElement('br');
 const br1 = document.createElement('br');
 
-let deldata=[];
-
 function showBooks() {
   for (let i = 0; i < books.length; i += 1) {
-    deldata = {
-      bookName: books[i].Name,
-      bookAuthor: books[i].Author,
-    };
-
     const divName = document.createElement('div');
     divName.className = 'divName';
     divName.id = '#name';
@@ -95,9 +88,6 @@ function showBooks() {
     booksArray.appendChild(divCard);
 
     function removeRow() {
-
-      localStorage.setItem('deletedDATA', JSON.stringify(deldata));
-
       for (let j = 0; j < books.length; j += 1) {
         if (books[i].Name === books[j].Name) {
           books.splice(j, 1);
