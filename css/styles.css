@@ -1,0 +1,39 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 30%;
+  margin: auto;
+}
+
+#booksTable {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
+  justify-content: flex-start;
+  align-content: center;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
+  justify-content: flex-start;
+  align-content: center;
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  height: 24px;
+}
+
+.button {
+  width: 50px;
+}
