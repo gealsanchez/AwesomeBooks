@@ -71,6 +71,12 @@ function showBooks() {
     buttonRemove.setAttribute('class', 'removeForm');
     buttonRemove.textContent = 'Remove';
 
+    function removeRow() {
+      const obj = {
+        bookName: books[i].Name,
+        bookAuthor: books[i].Author,
+      };
+
     buttonRemove.addEventListener('click', removeRow);
 
     const hr = document.createElement('hr');
@@ -88,12 +94,6 @@ function showBooks() {
     }
 
     booksArray.appendChild(divCard);
-
-    function removeRow() {
-      const obj = {
-        bookName: books[i].Name,
-        bookAuthor: books[i].Author,
-      };
 
       localStorage.setItem('deletedDATA', JSON.stringify(obj));
 
