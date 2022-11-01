@@ -4,8 +4,9 @@
 ## Built With
 
 - Major languages :\
-**Javascript**
-  **HTML5**  \
+
+**Javascript** \
+  **HTML5**  
   **CSS3**
 
 ## Getting Started
