@@ -12,7 +12,7 @@
 #booksTable {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
   align-items: stretch;
   justify-content: flex-start;
   align-content: center;
@@ -22,7 +22,7 @@
 form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 2px;
   align-items: stretch;
   justify-content: flex-start;
   align-content: center;
@@ -36,4 +36,8 @@ input {
 
 .button {
   width: 50px;
+}
+
+.hidden {
+  display: none;
 }
