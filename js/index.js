@@ -16,7 +16,7 @@ const buttonAdd = document.querySelector('#addbutton');
 const removeBook = (id) => {
   const books = JSON.parse(localStorage.getItem('books'));
   const newBooks = books.filter(
-    (item) => !(item.id === id)
+    (item) => !(item.id === id);
   );
   localStorage.setItem('books', JSON.stringify(newBooks));
 };
@@ -67,7 +67,8 @@ const buildBookSection = (bookList) => {
 const addBook = (name, author) => {
   const books = JSON.parse(localStorage.getItem('books')) || [];
   const id = bookList.length + 1;
-  books.push({ Name: name, Author: author, id: id });
+  const book = { Name: name, Author: author, id: id };
+  books.push(book);
   localStorage.setItem('books', JSON.stringify(books));
 };
 
