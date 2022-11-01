@@ -71,6 +71,8 @@ function showBooks() {
     buttonRemove.setAttribute('class', 'removeForm');
     buttonRemove.textContent = 'Remove';
 
+    buttonRemove.addEventListener('click', removeRow);
+
     const hr = document.createElement('hr');
 
     const divCard = document.createElement('div');
@@ -86,8 +88,6 @@ function showBooks() {
     }
 
     booksArray.appendChild(divCard);
-
-    buttonRemove.addEventListener('click', removeRow);
 
     function removeRow() {
       const obj = {
