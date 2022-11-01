@@ -16,7 +16,7 @@ const buttonAdd = document.querySelector('#addbutton');
 const removeBook = (id) => {
   const books = JSON.parse(localStorage.getItem('books'));
   const newBooks = books.filter(
-    (item) => !(item.id === id);
+    (item) => !(item.id === id),
   );
   localStorage.setItem('books', JSON.stringify(newBooks));
 };
