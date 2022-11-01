@@ -17,14 +17,19 @@
 
         </div>
         <form>
+
             <div class="field">
               <input type="text"
-                class="form-control" name="booktitle" id="booktitle" aria-describedby="Title" placeholder="Title">
+                class="form-control" name="booktitle" id="booktitle" aria-describedby="Title" placeholder="Title" required>
             </div>
             <div class="field">
               <input type="text"
-                class="form-control" name="bookauthor" id="bookauthor" aria-describedby="Author" placeholder="Author">
+                class="form-control" name="bookauthor" id="bookauthor" aria-describedby="Author" placeholder="Author" required>
             </div>
+            <div class="field">
+                <input type="text"
+                  class="form-control" name="bookISBN" id="bookISBN" aria-describedby="ISBN" placeholder="ISBN Code" required>
+              </div>
                 <input type="submit" class="form-control button" name="addbutton" id="addbutton" aria-describedby="Add" value="Add">
         </form>
     </main>
