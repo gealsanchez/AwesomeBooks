@@ -1,5 +1,2 @@
-*.dmb
-*.rsc
-*.int
-*.lk
-*.zip
+/node_modules
+.stylelintrc.json

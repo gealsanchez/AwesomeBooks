@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>Awesome Books</title>
+</head>
+
+<body>
+    <main class="content">
+        <h1>Awesome Books</h1>
+        <div class="table" id ="booksTable" >
+
+        </div>
+        <form>
+            <div class="field hidden">
+                <input type="text"
+                  class="form-control" name="bookID" id="bookID">
+            </div>
+            <div class="field">
+              <input type="text"
+                class="form-control" name="booktitle" id="booktitle" aria-describedby="Title" placeholder="Title" required>
+            </div>
+            <div class="field">
+              <input type="text"
+                class="form-control" name="bookauthor" id="bookauthor" aria-describedby="Author" placeholder="Author" required>
+            </div>
+
+                <input type="submit" class="form-control button" name="addbutton" id="addbutton" aria-describedby="Add" value="Add">
+        </form>
+    </main>
+    <script src="js/index.js" type="module"></script>
+</body>
+
+</html>
