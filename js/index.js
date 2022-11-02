@@ -16,7 +16,7 @@ const buttonAdd = document.querySelector('#addbutton');
 
 const removeBookFromUI = (item) => {
   if (item.classList.contains('buttonRemove')) {
-    item.parentElement.remove();
+    item.parentElement.parentElement.remove();
   }
 };
 
@@ -26,7 +26,7 @@ const createBookRow = (book) => {
   const titleTD = createTag('td', null, 'titleTD');
   const authorTD = createTag('td', null, 'authorTD');
   const idTD = createTag('td', null, 'idTD hidden');
-  const buttonTD = createTag('td', null, 'buttonTD');
+  const buttonTD = createTag('td', null, 'buttonTD buttonRemove');
   const buttonRemove = createTag('button', 'Remove', 'buttonRemove');
   buttonTD.appendChild(buttonRemove);
 
@@ -37,13 +37,13 @@ const createBookRow = (book) => {
   }
 
   idTD.textContent = book.ID;
-  titleTD.textContent = book.Title;
+  titleTD.textContent = '“'+book.Title+'”';
   authorTD.textContent = book.Author;
 
   buttonRemove.addEventListener('click', (event) => {
     const { target } = event;
     const bookNode = target.parentNode.parentNode.getElementsByTagName('td');
-    console.log(target.parentNode.parentNode[0]);
+    console.log(target.parentNode.parentNode);
     console.log(bookNode);
     const ID = bookNode[0].innerHTML;
     const Title = bookNode[1].innerHTML;
@@ -52,7 +52,7 @@ const createBookRow = (book) => {
     // Remove from data
     book.remove();
     // Remove from UI
-    removeBookFromUI(target.parentNode.parentNode);
+    removeBookFromUI(target);
     
   });
   return rowTR;
