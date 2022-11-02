@@ -1,4 +1,4 @@
-import { Book } from '../model/book.js';
+import Book from '../model/book.js';
 
 // const bookList = books.books;
 // const book=new Book()
@@ -21,7 +21,6 @@ const removeBookFromUI = (item) => {
 };
 
 const createBookRow = (book) => {
-
   const rowTR = createTag('tr', null, 'rowTR');
   const titleTD = createTag('td', null, 'titleTD');
   const authorTD = createTag('td', null, 'authorTD');
@@ -37,14 +36,12 @@ const createBookRow = (book) => {
   }
 
   idTD.textContent = book.ID;
-  titleTD.textContent = '“'+book.Title+'”';
+  titleTD.textContent = `“${book.Title}”`;
   authorTD.textContent = book.Author;
 
   buttonRemove.addEventListener('click', (event) => {
     const { target } = event;
     const bookNode = target.parentNode.parentNode.getElementsByTagName('td');
-    console.log(target.parentNode.parentNode);
-    console.log(bookNode);
     const ID = bookNode[0].innerHTML;
     const Title = bookNode[1].innerHTML;
     const Author = bookNode[2].innerHTML;
@@ -53,7 +50,6 @@ const createBookRow = (book) => {
     book.remove();
     // Remove from UI
     removeBookFromUI(target);
-    
   });
   return rowTR;
 };

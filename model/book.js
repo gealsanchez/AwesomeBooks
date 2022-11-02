@@ -32,4 +32,4 @@ class Book {
     return this.getAll().length;
   }
 }
-export { Book };
+export default Book;
