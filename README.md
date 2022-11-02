@@ -60,6 +60,12 @@ https://gealsanchez.github.io/AwesomeBooks/
 - Twitter: [@amentetteh](https://twitter.com/amentetteh)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/amentetteh)
 
+👤 **Alqama Saeed**
+
+- GitHub: [@smas0900](https://github.com/smas0900)
+- Twitter: [@AlqamaSaeed](https://twitter.com/AlqamaSaeed)
+- LinkedIn: [AlqamaSaeed](linkedin.com/in/alqama-saeed-598086120)
+
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).

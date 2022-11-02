@@ -9,16 +9,6 @@
   margin: auto;
 }
 
-#booksTable {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: stretch;
-  justify-content: flex-start;
-  align-content: center;
-  width: 100%;
-}
-
 form {
   display: flex;
   flex-direction: column;
@@ -40,4 +30,20 @@ input {
 
 .hidden {
   display: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 3px;
+  width: 100%;
+}
+
+tr:nth-child(even) {
+  background-color: #ddd;
 }
