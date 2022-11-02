@@ -21,28 +21,44 @@
             </ul>
         </nav>
     </header>
-    <main class="content">
-        <h1>All awesome books</h1>
-        <table class="table" id ="booksTable" >
-            
-        </table>
-        <h2>Add a new book</h2>
-        <form>
-            <div class="field hidden">
-                <input type="text"
-                  class="form-control" name="bookID" id="bookID">
-            </div>
-            <div class="field">
-              <input type="text"
-                class="form-control" name="booktitle" id="booktitle" aria-describedby="Title" placeholder="Title" required>
-            </div>
-            <div class="field">
-              <input type="text"
-                class="form-control" name="bookauthor" id="bookauthor" aria-describedby="Author" placeholder="Author" required>
-            </div>
 
-                <input type="submit" class="form-control button" name="addbutton" id="addbutton" aria-describedby="Add" value="Add">
-        </form>
+
+
+    <main class="content">
+        <section id="book-list">
+            <h1>All awesome books</h1>
+            <table class="table" id="booksTable">
+
+            </table>
+        </section>
+
+        <section id="book-add">
+
+            <h2>Add a new book</h2>
+            <form>
+                <div class="field hidden">
+                    <input type="text" class="form-control" name="bookID" id="bookID">
+                </div>
+                <div class="field">
+                    <input type="text" class="form-control" name="booktitle" id="booktitle" aria-describedby="Title"
+                        placeholder="Title" required>
+                </div>
+                <div class="field">
+                    <input type="text" class="form-control" name="bookauthor" id="bookauthor" aria-describedby="Author"
+                        placeholder="Author" required>
+                </div>
+
+                <input type="submit" class="form-control button" name="addbutton" id="addbutton" aria-describedby="Add"
+                    value="Add">
+            </form>
+
+        </section>
+
+        <section id="contact-info">
+            <h1>Contact Information</h1>
+        </section>
+
+
     </main>
     <script src="js/index.js" type="module"></script>
 </body>
