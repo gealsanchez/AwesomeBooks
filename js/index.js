@@ -21,31 +21,30 @@ const removeBookFromUI = (item) => {
 };
 
 const createBookRow = (book) => {
-  /* const divID = createTag('div', null, 'divID hidden');
-  const divName = createTag('div', null, 'divName');
-  const divAuthor = createTag('div', null, 'divAuthor');
+
+  const rowTR = createTag('tr', null, 'rowTR');
+  const titleTD = createTag('td', null, 'titleTD');
+  const authorTD = createTag('td', null, 'authorTD');
+  const idTD = createTag('td', null, 'idTD hidden');
+  const buttonTD = createTag('td', null, 'buttonTD');
   const buttonRemove = createTag('button', 'Remove', 'buttonRemove');
-  const hr = document.createElement('hr');
-  const bookRow = createTag('div', null, 'bookRow');
+  buttonTD.appendChild(buttonRemove);
 
-  divID.textContent = book.ID;
-  divName.textContent = book.Title;
-  divAuthor.textContent = book.Author; */
-  const bookRow = `<tr>
-    <td>${book.Title}</td>
-    <td>${book.Author}</td>
-    <td><button>Remove</button></td>
-  </tr>`;
+  const rowItems = [idTD, titleTD, authorTD, buttonTD];
 
-  /* const cardItems = [divID, divName, divAuthor, buttonRemove, hr];
+  for (let j = 0; j < rowItems.length; j += 1) {
+    rowTR.appendChild(rowItems[j]);
+  }
 
-  for (let j = 0; j < cardItems.length; j += 1) {
-    bookRow.appendChild(cardItems[j]);
-  } */
+  idTD.textContent = book.ID;
+  titleTD.textContent = book.Title;
+  authorTD.textContent = book.Author;
 
   buttonRemove.addEventListener('click', (event) => {
     const { target } = event;
-    const bookNode = target.parentNode.getElementsByTagName('div');
+    const bookNode = target.parentNode.parentNode.getElementsByTagName('td');
+    console.log(target.parentNode.parentNode[0]);
+    console.log(bookNode);
     const ID = bookNode[0].innerHTML;
     const Title = bookNode[1].innerHTML;
     const Author = bookNode[2].innerHTML;
@@ -53,9 +52,10 @@ const createBookRow = (book) => {
     // Remove from data
     book.remove();
     // Remove from UI
-    removeBookFromUI(target);
+    removeBookFromUI(target.parentNode.parentNode);
+    
   });
-  return bookRow;
+  return rowTR;
 };
 
 const buildBookSection = (bookList) => {
