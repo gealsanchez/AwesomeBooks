@@ -16,11 +16,9 @@ const buttonAdd = document.querySelector('#addbutton');
 
 const removeBook = (id) => {
   const books = JSON.parse(localStorage.getItem('books'));
-  console.log(books)
   const newBooks = books.filter(
-    (item) => (!(item.id == id)),
+    (item) => (!(parseInt(item.id, 10) === parseInt(id, 10))),
   );
-  console.log(newBooks)
   localStorage.setItem('books', JSON.stringify(newBooks));
 };
 const removeBookFromUI = (item) => {
@@ -78,7 +76,7 @@ const addBook = (name, author) => {
 };
 
 const addBookToUI = (ID, name, author) => {
-  booksTable.appendChild(createBookRow(ID,name, author));
+  booksTable.appendChild(createBookRow(ID, name, author));
 };
 
 const clearForm = () => {
