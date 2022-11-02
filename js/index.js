@@ -28,12 +28,26 @@ const removeBookFromUI = (item) => {
 };
 
 const createBookRow = (ID, bookName, bookAuthor) => {
+
+
   const divID = createTag('div', null, 'divID hidden');
   const divName = createTag('div', null, 'divName');
   const divAuthor = createTag('div', null, 'divAuthor');
   const buttonRemove = createTag('button', 'Remove', 'buttonRemove');
   const hr = document.createElement('hr');
+  const rowTR = createTag('tr', null, 'rowTR');
+  const titleTD = createTag('td', null, 'titleTD');
+  const authorTD = createTag('td', null, 'authorTD');
+  const idTD = createTag('td', null, 'idTD hidden');
+  const buttonTD = createTag('td', null, 'buttonTD');
   const bookRow = createTag('div', null, 'bookRow');
+
+  const rowItems = [idTD, titleTD, authorTD, buttonTD];
+
+  for (let j = 0; j < rowItems.length; j += 1) {
+    rowTR.appendChild(rowItems[j]);
+  }
+
   divID.textContent = ID;
   divName.textContent = bookName;
   divAuthor.textContent = bookAuthor;
