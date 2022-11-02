@@ -21,7 +21,7 @@ const removeBookFromUI = (item) => {
 };
 
 const createBookRow = (book) => {
-  const rowTR = createTag('tr', null, 'rowTR');
+  const bookRow = createTag('tr', null, 'rowTR');
   const titleTD = createTag('td', null, 'titleTD');
   const authorTD = createTag('td', null, 'authorTD');
   const idTD = createTag('td', null, 'idTD hidden');
@@ -32,7 +32,7 @@ const createBookRow = (book) => {
   const rowItems = [idTD, titleTD, authorTD, buttonTD];
 
   for (let j = 0; j < rowItems.length; j += 1) {
-    rowTR.appendChild(rowItems[j]);
+    bookRow.appendChild(rowItems[j]);
   }
 
   idTD.textContent = book.ID;
@@ -51,7 +51,7 @@ const createBookRow = (book) => {
     // Remove from UI
     removeBookFromUI(target);
   });
-  return rowTR;
+  return bookRow;
 };
 
 const buildBookSection = (bookList) => {
