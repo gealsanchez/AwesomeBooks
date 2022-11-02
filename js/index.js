@@ -87,7 +87,42 @@ buttonAdd.addEventListener('click', () => {
   clearForm();
 });
 
+const navbar = document.querySelector('.nav-bar');
+navbar.addEventListener('click' , (e) => {
+  console.log(e.target);
+
+  const listSec = document.querySelector("#book-list");
+  const contactSec = document.querySelector("#contact");
+  const addBook = document.querySelector("#book-add");
+
+
+  switch(e.target){
+    case "new-add":
+      console.log("add");
+      addBook.classList.toggle("show");
+      listSec.classList.toggle("hidden");
+      contactSec.classList.toggle("hidden");
+
+      break;
+
+    case "contact":
+      console.log("contact");
+      contactSec.classList.toggle("show");
+      addBook.classList.toggle("hidden");
+      listSec.classList.toggle("hidden");
+      break;
+
+    case "list":
+      console.log("list");
+      listSec.classList.toggle("show");
+      addBook.classList.toggle("hidden");
+      contactSec.classList.toggle("hidden");
+      break;
+  }
+});
+
 // Display Books on page load
 if (Book.count() > 0) {
   document.addEventListener('DOMContentLoaded', buildBookSection(Book.getAll()));
 }
+

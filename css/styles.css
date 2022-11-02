@@ -48,3 +48,20 @@ td {
 tr:nth-child(even) {
   background-color: #ddd;
 }
+
+#book-add {
+  display: none;
+}
+
+#contact-info {
+  display: none;
+}
+
+#book-foot {
+  position: fixed;
+  bottom: 0;
+}
+
+.show {
+  display: flex;
+}
