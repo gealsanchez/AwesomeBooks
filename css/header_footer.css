@@ -86,7 +86,8 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: auto 15px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin: auto 10px;
   font-weight: bold;
 }

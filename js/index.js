@@ -138,19 +138,20 @@ navbar.addEventListener('click', (e) => {
 
 const contactUl = createTag('ul', null, 'contact-ul');
 const contact = new Contact();
-console.log(contact);
 
-for (let item in contact) {
+const contactlist = Object.values(contact);
+
+for (let i = 0; i < contactlist.length; i += 1) {
   const contactLi = createTag('li', null, 'contact-li');
-  contactLi.textContent = contact[item];
+  contactLi.textContent = contactlist[i];
   contactUl.appendChild(contactLi);
 }
 
 const contactList = document.querySelector('.contact-list');
 contactList.appendChild(contactUl);
 
-const dateTime= document.querySelector('#datetime');
-dateTime.textContent= new Date().toLocaleString();
+const dateTime = document.querySelector('#datetime');
+dateTime.textContent = new Date().toLocaleString();
 
 // Display Books on page load
 if (Book.count() > 0) {
