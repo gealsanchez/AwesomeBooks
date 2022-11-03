@@ -10,7 +10,7 @@ const createTag = (tagName, textContent = null, className = null) => {
   return tag;
 };
 
-const booksTable = document.querySelector('#booksTable');
+const booksTable = document.querySelector('#books-table');
 
 const buttonAdd = document.querySelector('#addbutton');
 

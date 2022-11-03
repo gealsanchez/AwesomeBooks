@@ -39,29 +39,27 @@ input {
   display: none;
 }
 
-#book-add,
-table {
+#books-table {
+  font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-#booksTable {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
-  align-content: center;
-  width: 100%;
+td:nth-child(4) {
+  width: 50px;
 }
 
-td {
+#books-table td,
+#customers {
   border: 1px solid #ddd;
-  text-align: left;
-  padding: 3px;
-  width: 100%;
+  padding: 8px;
 }
 
-tr:nth-child(even) {
+#books-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#books-table tr:hover {
   background-color: #ddd;
 }
 
