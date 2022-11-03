@@ -1,8 +1,5 @@
 import Book from '../model/book.js';
 
-// const bookList = books.books;
-// const book=new Book()
-
 const createTag = (tagName, textContent = null, className = null) => {
   const tag = document.createElement(tagName);
   tag.textContent = textContent;
@@ -119,43 +116,18 @@ navbar.addEventListener('click', (e) => {
   switch (e.target.id) {
     case 'new-add':
       reset();
-      /* if(!addBookSection.classList.contains("show")){
-        addBookSection.classList.toggle("show");
-      }
-      if(!listSection.classList.contains("hidden")){
-        listSection.classList.toggle("hidden");
-      }
-      if(!contactSection.classList.contains("hidden")){
-        contactSection.classList.toggle("hidden");
-      } */
+
       displaySection(addBookSection);
       break;
     case 'contact':
       reset();
-      /* if(!contactSection.classList.contains("show")){
-        contactSection.classList.toggle("show");
-      }
-      if(!addBookSection.classList.contains("hidden")){
-        addBookSection.classList.toggle("hidden");
-      }
-      if(!listSection.classList.contains("hidden")){
-        listSection.classList.toggle("hidden");
-      } */
 
       displaySection(contactSection);
 
       break;
     case 'list':
       reset();
-      /* if(!listSection.classList.contains("show")){
-        listSection.classList.toggle("show");
-      }
-      if(!addBookSection.classList.contains("hidden")){
-        addBookSection.classList.toggle("hidden");
-      }
-      if(!contactSection.classList.contains("hidden")){
-        contactSection.classList.toggle("hidden");
-      } */
+
       displaySection(listSection);
       break;
     default:
