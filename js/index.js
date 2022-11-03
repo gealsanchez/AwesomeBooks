@@ -3,8 +3,6 @@ import Book from '../model/book.js';
 // const bookList = books.books;
 // const book=new Book()
 
-
-
 const createTag = (tagName, textContent = null, className = null) => {
   const tag = document.createElement(tagName);
   tag.textContent = textContent;
@@ -87,36 +85,80 @@ buttonAdd.addEventListener('click', () => {
   clearForm();
 });
 
+const listSection = document.querySelector('#book-list');
+const contactSection = document.querySelector('#contact-info');
+const addBookSection = document.querySelector('#book-add');
+const reset = () => {
+  addBookSection.classList.remove('show');
+  addBookSection.classList.remove('hidden');
+
+  listSection.classList.remove('show');
+  listSection.classList.remove('hidden');
+
+  contactSection.classList.remove('show');
+  contactSection.classList.remove('hidden');
+};
+
+const displaySection = (section) => {
+  const sectionArray = [listSection, contactSection, addBookSection];
+
+  if (!section.classList.contains('show')) {
+    section.classList.toggle('show');
+  }
+  for (let i = 0; i < sectionArray.length; i += 1) {
+    if (sectionArray[i] !== section) {
+      if (!sectionArray[i].classList.contains('hidden')) {
+        sectionArray[i].classList.toggle('hidden');
+      }
+    }
+  }
+};
+
 const navbar = document.querySelector('.nav-bar');
-navbar.addEventListener('click' , (e) => {
-  console.log(e.target);
+navbar.addEventListener('click', (e) => {
+  switch (e.target.id) {
+    case 'new-add':
+      reset();
+      /* if(!addBookSection.classList.contains("show")){
+        addBookSection.classList.toggle("show");
+      }
+      if(!listSection.classList.contains("hidden")){
+        listSection.classList.toggle("hidden");
+      }
+      if(!contactSection.classList.contains("hidden")){
+        contactSection.classList.toggle("hidden");
+      } */
+      displaySection(addBookSection);
+      break;
+    case 'contact':
+      reset();
+      /* if(!contactSection.classList.contains("show")){
+        contactSection.classList.toggle("show");
+      }
+      if(!addBookSection.classList.contains("hidden")){
+        addBookSection.classList.toggle("hidden");
+      }
+      if(!listSection.classList.contains("hidden")){
+        listSection.classList.toggle("hidden");
+      } */
 
-  const listSec = document.querySelector("#book-list");
-  const contactSec = document.querySelector("#contact");
-  const addBook = document.querySelector("#book-add");
-
-
-  switch(e.target){
-    case "new-add":
-      console.log("add");
-      addBook.classList.toggle("show");
-      listSec.classList.toggle("hidden");
-      contactSec.classList.toggle("hidden");
+      displaySection(contactSection);
 
       break;
-
-    case "contact":
-      console.log("contact");
-      contactSec.classList.toggle("show");
-      addBook.classList.toggle("hidden");
-      listSec.classList.toggle("hidden");
+    case 'list':
+      reset();
+      /* if(!listSection.classList.contains("show")){
+        listSection.classList.toggle("show");
+      }
+      if(!addBookSection.classList.contains("hidden")){
+        addBookSection.classList.toggle("hidden");
+      }
+      if(!contactSection.classList.contains("hidden")){
+        contactSection.classList.toggle("hidden");
+      } */
+      displaySection(listSection);
       break;
-
-    case "list":
-      console.log("list");
-      listSec.classList.toggle("show");
-      addBook.classList.toggle("hidden");
-      contactSec.classList.toggle("hidden");
+    default:
       break;
   }
 });
@@ -125,4 +167,3 @@ navbar.addEventListener('click' , (e) => {
 if (Book.count() > 0) {
   document.addEventListener('DOMContentLoaded', buildBookSection(Book.getAll()));
 }
-
