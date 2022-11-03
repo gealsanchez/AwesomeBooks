@@ -1,4 +1,5 @@
 import Book from '../model/book.js';
+import Contact from '../model/contact.js';
 
 const createTag = (tagName, textContent = null, className = null) => {
   const tag = document.createElement(tagName);
@@ -134,6 +135,19 @@ navbar.addEventListener('click', (e) => {
       break;
   }
 });
+
+const contactUl = createTag('ul', null, 'contact-ul');
+const contact = new Contact();
+console.log(contact);
+
+for (let item in contact) {
+  const contactLi = createTag('li', null, 'contact-li');
+  contactLi.textContent = contact[item];
+  contactUl.appendChild(contactLi);
+}
+
+const contactList = document.querySelector('.contact-list');
+contactList.appendChild(contactUl);
 
 // Display Books on page load
 if (Book.count() > 0) {
