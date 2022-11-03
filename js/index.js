@@ -149,6 +149,9 @@ for (let item in contact) {
 const contactList = document.querySelector('.contact-list');
 contactList.appendChild(contactUl);
 
+const dateTime= document.querySelector('#datetime');
+dateTime.textContent= new Date().toLocaleString();
+
 // Display Books on page load
 if (Book.count() > 0) {
   document.addEventListener('DOMContentLoaded', buildBookSection(Book.getAll()));
