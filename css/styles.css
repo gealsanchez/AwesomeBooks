@@ -1,13 +1,19 @@
-@import './header.css';
+@import './header-footer.css';
+
 .content {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   align-content: center;
-  width: 30%;
+  width: 45%;
   margin: auto;
+}
+
+h1,
+h2 {
+  text-align: center;
 }
 
 form {
@@ -33,8 +39,18 @@ input {
   display: none;
 }
 
+#book-add,
 table {
   border-collapse: collapse;
+  width: 100%;
+}
+
+#booksTable {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  align-content: center;
   width: 100%;
 }
 
@@ -53,15 +69,19 @@ tr:nth-child(even) {
   display: none;
 }
 
-#contact-info {
+#book-add.show,
+#contact-info.show,
+#book-list.show {
+  display: flex;
+  flex-direction: column;
+}
+
+#book-add.hidden,
+#contact-info.hidden,
+#book-list.hidden {
   display: none;
 }
 
-#book-foot {
-  position: fixed;
-  bottom: 0;
-}
-
-.show {
-  display: flex;
+#contact-info {
+  display: none;
 }

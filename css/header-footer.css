@@ -1,10 +1,12 @@
-.nav-bar {
-  border: 2px solid black;
+body {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0px;
-  margin: auto 3% 3%;
+  flex-direction: column;
+}
+
+header {
+  background: white;
+  width: 100%;
+  top: 0;
 }
 
 .list-Container {
@@ -79,4 +81,28 @@
   margin-top: -45px;
   font-size: 30px;
   font-family: sans-serif;
+}
+
+.nav-bar {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  margin: auto 3% 3%;
+}
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  border: 2px solid black;
+  padding: 0;
+  width: 98%;
+  margin: 0 auto;
+  background: white;
+}
+
+footer h2 {
+  text-align: left;
+  padding-left: 10px;
 }
