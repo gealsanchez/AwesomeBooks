@@ -1,7 +1,5 @@
 import Book from '../model/book.js';
-
-// const bookList = books.books;
-// const book=new Book()
+import Contact from '../model/contact.js';
 
 const createTag = (tagName, textContent = null, className = null) => {
   const tag = document.createElement(tagName);
@@ -10,7 +8,7 @@ const createTag = (tagName, textContent = null, className = null) => {
   return tag;
 };
 
-const booksTable = document.querySelector('#booksTable');
+const booksTable = document.querySelector('#books-table');
 
 const buttonAdd = document.querySelector('#addbutton');
 
@@ -84,6 +82,76 @@ buttonAdd.addEventListener('click', () => {
   addBookToUI(savedBook);
   clearForm();
 });
+
+const listSection = document.querySelector('#book-list');
+const contactSection = document.querySelector('#contact-info');
+const addBookSection = document.querySelector('#book-add');
+const reset = () => {
+  addBookSection.classList.remove('show');
+  addBookSection.classList.remove('hidden');
+
+  listSection.classList.remove('show');
+  listSection.classList.remove('hidden');
+
+  contactSection.classList.remove('show');
+  contactSection.classList.remove('hidden');
+};
+
+const displaySection = (section) => {
+  const sectionArray = [listSection, contactSection, addBookSection];
+
+  if (!section.classList.contains('show')) {
+    section.classList.toggle('show');
+  }
+  for (let i = 0; i < sectionArray.length; i += 1) {
+    if (sectionArray[i] !== section) {
+      if (!sectionArray[i].classList.contains('hidden')) {
+        sectionArray[i].classList.toggle('hidden');
+      }
+    }
+  }
+};
+
+const navbar = document.querySelector('.nav-bar');
+navbar.addEventListener('click', (e) => {
+  switch (e.target.id) {
+    case 'new-add':
+      reset();
+
+      displaySection(addBookSection);
+      break;
+    case 'contact':
+      reset();
+
+      displaySection(contactSection);
+
+      break;
+    case 'list':
+      reset();
+
+      displaySection(listSection);
+      break;
+    default:
+      break;
+  }
+});
+
+const contactUl = createTag('ul', null, 'contact-ul');
+const contact = new Contact();
+
+const contactlist = Object.values(contact);
+
+for (let i = 0; i < contactlist.length; i += 1) {
+  const contactLi = createTag('li', null, 'contact-li');
+  contactLi.textContent = contactlist[i];
+  contactUl.appendChild(contactLi);
+}
+
+const contactList = document.querySelector('.contact-list');
+contactList.appendChild(contactUl);
+
+const dateTime = document.querySelector('#datetime');
+dateTime.textContent = new Date().toLocaleString();
 
 // Display Books on page load
 if (Book.count() > 0) {
