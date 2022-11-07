@@ -1,12 +1,12 @@
 import Book from '../modules/book.js';
 import Contact from '../modules/contact.js';
 
-const createTag = (tagName, textContent = null, className = null) => {
+function createTag(tagName, textContent = null, className = null) {
   const tag = document.createElement(tagName);
   tag.textContent = textContent;
   tag.className = className;
   return tag;
-};
+}
 
 const booksTable = document.querySelector('#books-table');
 
@@ -151,6 +151,7 @@ const contactList = document.querySelector('.contact-list');
 contactList.appendChild(contactUl);
 
 const dateTime = document.querySelector('#datetime');
+// eslint-disable-next-line no-undef
 dateTime.textContent = luxon.DateTime.local().toLocaleString(luxon.DateTime.DATETIME_FULL);
 
 // Display Books on page load
