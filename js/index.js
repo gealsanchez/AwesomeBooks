@@ -151,7 +151,6 @@ const contactList = document.querySelector('.contact-list');
 contactList.appendChild(contactUl);
 
 const dateTime = document.querySelector('#datetime');
-// dateTime.textContent = DateTime.now().toJSDate();
 dateTime.textContent = luxon.DateTime.local().toLocaleString(luxon.DateTime.DATETIME_FULL);
 
 // Display Books on page load
