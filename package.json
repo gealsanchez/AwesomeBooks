@@ -16,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/gealsanchez/AwesomeBooks/issues"
   },
-  "homepage": "https://github.com/gealsanchez/AwesomeBooks#readme"
+  "homepage": "https://github.com/gealsanchez/AwesomeBooks#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.26.0"
+  },
+  "dependencies": {
+    "luxon": "^3.1.0"
+  }
 }

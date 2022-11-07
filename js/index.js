@@ -1,6 +1,5 @@
 import Book from '../modules/book.js';
 import Contact from '../modules/contact.js';
-import { DateTime } from '../modules/luxon.js';
 
 const createTag = (tagName, textContent = null, className = null) => {
   const tag = document.createElement(tagName);
@@ -152,7 +151,8 @@ const contactList = document.querySelector('.contact-list');
 contactList.appendChild(contactUl);
 
 const dateTime = document.querySelector('#datetime');
-dateTime.textContent = DateTime.now().toJSDate();
+// dateTime.textContent = DateTime.now().toJSDate();
+dateTime.textContent = luxon.DateTime.local().toLocaleString(luxon.DateTime.DATETIME_FULL);
 
 // Display Books on page load
 if (Book.count() > 0) {
