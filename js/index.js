@@ -1,6 +1,6 @@
 import Book from '../modules/book.js';
 import Contact from '../modules/contact.js';
-import { DateTime } from "../modules/luxon.js";
+import { DateTime } from '../modules/luxon.js';
 
 const createTag = (tagName, textContent = null, className = null) => {
   const tag = document.createElement(tagName);
@@ -50,7 +50,6 @@ const createBookRow = (book) => {
     // Remove from UI
     removeBookFromUI(target);
   });
-  
   return bookRow;
 };
 
