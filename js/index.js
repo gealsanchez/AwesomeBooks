@@ -1,12 +1,12 @@
-import Book from '../model/book.js';
-import Contact from '../model/contact.js';
+import Book from '../modules/book.js';
+import Contact from '../modules/contact.js';
 
-const createTag = (tagName, textContent = null, className = null) => {
+function createTag(tagName, textContent = null, className = null) {
   const tag = document.createElement(tagName);
   tag.textContent = textContent;
   tag.className = className;
   return tag;
-};
+}
 
 const booksTable = document.querySelector('#books-table');
 
@@ -86,6 +86,7 @@ buttonAdd.addEventListener('click', () => {
 const listSection = document.querySelector('#book-list');
 const contactSection = document.querySelector('#contact-info');
 const addBookSection = document.querySelector('#book-add');
+
 const reset = () => {
   addBookSection.classList.remove('show');
   addBookSection.classList.remove('hidden');
@@ -117,20 +118,19 @@ navbar.addEventListener('click', (e) => {
   switch (e.target.id) {
     case 'new-add':
       reset();
-
       displaySection(addBookSection);
       break;
+
     case 'contact':
       reset();
-
       displaySection(contactSection);
-
       break;
+
     case 'list':
       reset();
-
       displaySection(listSection);
       break;
+
     default:
       break;
   }
@@ -151,7 +151,8 @@ const contactList = document.querySelector('.contact-list');
 contactList.appendChild(contactUl);
 
 const dateTime = document.querySelector('#datetime');
-dateTime.textContent = new Date().toLocaleString();
+// eslint-disable-next-line no-undef
+dateTime.textContent = luxon.DateTime.local().toLocaleString(luxon.DateTime.DATETIME_FULL);
 
 // Display Books on page load
 if (Book.count() > 0) {
