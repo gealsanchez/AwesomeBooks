@@ -1,5 +1,5 @@
 # AwesomeBooks
-2 Module Week 1
+Easily add & remove books from a list. Local Storage handling.
 
 ## Built With
 
