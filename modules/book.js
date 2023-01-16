@@ -32,4 +32,5 @@ class Book {
     return this.getAll().length;
   }
 }
+
 export default Book;
